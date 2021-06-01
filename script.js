@@ -1,5 +1,6 @@
 const container = document.querySelector('#container');
 const resizeGrid = document.querySelector('#resizeGrid');
+const solidColorButton = document.querySelector('#solidColorButton');
 const randColorButton = document.querySelector('#randColorButton');
 const grayscaleButton = document.querySelector('#grayscaleButton');
 let randRed, randGreen, randBlue, grayShade = 255; 
@@ -13,6 +14,9 @@ drawGrid();
 
 // resize grid when button is clicked
 resizeGrid.addEventListener('click', changeGrid);
+
+// change palette to solid color when button is clicked
+solidColorButton.addEventListener('click', drawGrid);
 
 // change palette to rainbow when button is clicked
 randColorButton.addEventListener('click', changePaletteRand);
@@ -65,13 +69,16 @@ function changePaletteGrayscale () {
     for (i = 0; i < gridArea; i++) {
         let gridPixel = document.createElement('div');
         gridPixel.classList='gridPixel';
+        gridPixel.setAttribute("grayTracker", 255);
         container.appendChild(gridPixel);
         gridPixel.addEventListener('mouseenter', function toGrayscale() {
+            grayShade = this.getAttribute("grayTracker");
             grayShade -= 26;
             if (grayShade < 0) {
                 grayShade = 0;
             }
-            gridPixel.style.backgroundColor = "rgb(" + grayShade + "," + grayShade + "," + grayShade + ")";
+            this.style.backgroundColor = "rgb(" + grayShade + "," + grayShade + "," + grayShade + ")";
+            this.setAttribute("grayTracker", grayShade);
         });  
     };   
 }
@@ -80,7 +87,7 @@ function changePaletteGrayscale () {
 function changeGrid() {
     do {
         gridSize = parseInt(prompt("Grid size? (enter 1 to 100)"));
-    } while (gridSize > 100 || gridSize < 1);
+    } while (isNaN(gridSize) || gridSize > 100 || gridSize < 1);
     gridArea = gridSize ** 2;
     document.documentElement.style.setProperty("--gridSize", gridSize);
     drawGrid();

@@ -30,8 +30,3 @@ h1 {
     background-color: rgb(var(--randRed), var(--randGreen), var(--randBlue))
 }
 
-/*
-.gridPixel:hover {
-    background-color: blue;
-}
-*/
