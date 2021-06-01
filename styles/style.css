@@ -1,6 +1,9 @@
 
 :root {
     --gridSize: 16;
+    --randRed: 0;
+    --randGreen: 0;
+    --randBlue: 0;
 }
 
 h1 {
@@ -18,3 +21,17 @@ h1 {
 .gridPixel {
     background-color: red;
 }
+
+.filledPixel {
+    background-color: blue;
+}
+
+.randPixelColor {
+    background-color: rgb(--randRed --randGreen --randBlue)
+}
+
+/*
+.gridPixel:hover {
+    background-color: blue;
+}
+*/
