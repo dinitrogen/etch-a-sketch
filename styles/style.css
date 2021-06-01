@@ -27,7 +27,7 @@ h1 {
 }
 
 .randPixelColor {
-    background-color: rgb(--randRed --randGreen --randBlue)
+    background-color: rgb(var(--randRed), var(--randGreen), var(--randBlue))
 }
 
 /*
