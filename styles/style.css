@@ -7,26 +7,56 @@
 }
 
 h1 {
+    text-align: center;
     color: blue;
+    font-family: 'Snell Roundhand', 'Brush Script MT', 'Brush Script Std', cursive;
+    font-style: bold;
 }
+
+/*
+#etch-border {
+    height: 530px;
+    width: 530px;
+    background-color: red;
+    vertical-align:middle;
+    
+}
+*/
 
 #container {
     display: grid;
+    background: rgb(92, 92, 92);
     grid-template-columns: repeat(var(--gridSize), auto);
-    grid-gap: 3px;
-    height: 480px;
-    width: 480px;
+    grid-gap: 0px;
+    height: 550px;
+    width: 550px;
+    margin: auto;
+    border: 60px solid rgb(216, 55, 55);
+    border-radius: 15px;
 }
 
 .gridPixel {
-    background-color: red;
+    background-color: rgb(247, 247, 247);
+    margin: 1px;
 }
 
 .filledPixel {
-    background-color: blue;
+    background-color: rgb(15, 10, 10);
 }
 
 .randPixelColor {
     background-color: rgb(var(--randRed), var(--randGreen), var(--randBlue))
+}
+
+#palettesDiv {
+    text-align:center;
+}
+
+#resizeDiv {
+    text-align:center;
+}
+
+.button {
+    
 }
 

@@ -72,13 +72,13 @@ function changePaletteGrayscale () {
         gridPixel.setAttribute("grayTracker", 255);
         container.appendChild(gridPixel);
         gridPixel.addEventListener('mouseenter', function toGrayscale() {
-            grayShade = this.getAttribute("grayTracker");
+            grayShade = gridPixel.getAttribute("grayTracker");
             grayShade -= 26;
             if (grayShade < 0) {
                 grayShade = 0;
             }
-            this.style.backgroundColor = "rgb(" + grayShade + "," + grayShade + "," + grayShade + ")";
-            this.setAttribute("grayTracker", grayShade);
+            gridPixel.style.backgroundColor = "rgb(" + grayShade + "," + grayShade + "," + grayShade + ")";
+            gridPixel.setAttribute("grayTracker", grayShade);
         });  
     };   
 }
